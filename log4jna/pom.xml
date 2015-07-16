@@ -32,11 +32,11 @@
 
     <distributionManagement>
         <repository>
-            <id>nmd</id>
+            <id>cantara</id>
             <url>http://mvnrepo.cantara.no/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
-            <id>nmd</id>
+            <id>cantara</id>
             <url>http://mvnrepo.cantara.no/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
