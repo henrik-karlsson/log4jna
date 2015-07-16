@@ -17,21 +17,6 @@
 
 package org.apache.log4jna.nt;
 
-import java.io.Serializable;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.Filter;
-import org.apache.logging.log4j.core.Layout;
-import org.apache.logging.log4j.core.LogEvent;
-import org.apache.logging.log4j.core.impl.Log4jLogEvent;
-import org.apache.logging.log4j.core.layout.PatternLayout;
-import org.apache.logging.log4j.message.SimpleMessage;
-
-import junit.framework.TestCase;
-
 import com.sun.jna.platform.win32.Advapi32Util;
 import com.sun.jna.platform.win32.Advapi32Util.EventLogIterator;
 import com.sun.jna.platform.win32.Advapi32Util.EventLogRecord;
@@ -39,6 +24,24 @@ import com.sun.jna.platform.win32.Advapi32Util.EventLogType;
 import com.sun.jna.platform.win32.Kernel32;
 import com.sun.jna.platform.win32.WinNT;
 import com.sun.jna.platform.win32.WinReg;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.Filter;
+import org.apache.logging.log4j.core.Layout;
+import org.apache.logging.log4j.core.LogEvent;
+import org.apache.logging.log4j.core.impl.Log4jLogEvent;
+import org.apache.logging.log4j.core.layout.PatternLayout;
+import org.apache.logging.log4j.message.SimpleMessage;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import java.io.Serializable;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * 
@@ -49,7 +52,8 @@ import com.sun.jna.platform.win32.WinReg;
  * @author <a href="mailto:tony@niemira.com">Tony Niemira</a>
  * 
  */
-public class Win32EventLogAppenderTest extends TestCase {
+@Ignore
+public class Win32EventLogAppenderTest {
 
 	private static final String TEST_LOGGER_NAME = "testLogger";
 
@@ -60,6 +64,7 @@ public class Win32EventLogAppenderTest extends TestCase {
 
 	private Win32EventLogAppender _eventLogAppender = null;
 
+	@Before
 	public void setUp() {
 		String source = null;
 		String log = getClass().getName();
@@ -75,6 +80,7 @@ public class Win32EventLogAppenderTest extends TestCase {
 		_eventLogAppender.setEventMessageFile(_eventLogAppenderDLL);
 	}
 
+	@Test
 	public void testDebugEvent() {
 		String message = "log4jna debug message @ "
 				+ Kernel32.INSTANCE.GetTickCount();
@@ -82,6 +88,7 @@ public class Win32EventLogAppenderTest extends TestCase {
 		expectEvent(message, Level.DEBUG, EventLogType.Informational);
 	}
 
+	@Test
 	public void testInfoEvent() {
 		String message = "log4jna info message @ "
 				+ Kernel32.INSTANCE.GetTickCount();
@@ -89,6 +96,7 @@ public class Win32EventLogAppenderTest extends TestCase {
 		expectEvent(message, Level.INFO, EventLogType.Informational);
 	}
 
+	@Test
 	public void testWarnEvent() {
 		String message = "log4jna warn message @ "
 				+ Kernel32.INSTANCE.GetTickCount();
@@ -96,6 +104,7 @@ public class Win32EventLogAppenderTest extends TestCase {
 		expectEvent(message, Level.WARN, EventLogType.Warning);
 	}
 
+	@Test
 	public void testFatalEvent() {
 		String message = "log4jna fatal message @ "
 				+ Kernel32.INSTANCE.GetTickCount();
