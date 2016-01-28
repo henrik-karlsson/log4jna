@@ -29,7 +29,7 @@
     </developers>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/henrik-karlsson/log4jna.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@github.com/henrik-karlsson/log4jna.git</developerConnection>
         <connection>scm:git:https://github.com/henrik-karlsson/log4jna.git</connection>
         <url>https://github.com/henrik-karlsson/log4jna.git</url>
     </scm>
@@ -40,11 +40,11 @@
 
     <distributionManagement>
 		<repository>
-			<id>pulsen</id>
+			<id>maven.gbg.pi.pulsen</id>
 			<url>http://maven.gbg.pi.pulsen/libs-releases-local</url>
 		</repository>
 		<snapshotRepository>
-			<id>pulsen</id>
+			<id>maven.gbg.pi.pulsen</id>
 			<url>http://maven.gbg.pi.pulsen/libs-snapshots-local</url>
 		</snapshotRepository>        
     </distributionManagement>
