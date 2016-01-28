@@ -92,7 +92,7 @@
                 -->
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>2.2-beta-5</version>
+                    <version>2.6</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -100,7 +100,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.3.2</version>
+                    <version>2.5.3</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
