@@ -18,12 +18,20 @@
                 <role>Developer</role>
             </roles>
         </developer>
+        <developer>
+            <id>heka</id>
+            <name>Henrik Karlsson</name>
+            <email>henrik.karlsson[at]pulsen[dot]se</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
     </developers>
 
     <scm>
-        <developerConnection>scm:git:ssh://git@github.com/Cantara/log4jna.git</developerConnection>
-        <connection>scm:git:https://github.com/Cantara/log4jna.git</connection>
-        <url>https://github.com/Cantara/log4jna.git</url>
+        <developerConnection>scm:git:https://github.com/henrik-karlsson/log4jna.git</developerConnection>
+        <connection>scm:git:https://github.com/henrik-karlsson/log4jna.git</connection>
+        <url>https://github.com/henrik-karlsson/log4jna.git</url>
     </scm>
 
     <properties>
@@ -31,14 +39,14 @@
     </properties>
 
     <distributionManagement>
-        <repository>
-            <id>cantara</id>
-            <url>http://mvnrepo.cantara.no/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>cantara</id>
-            <url>http://mvnrepo.cantara.no/content/repositories/snapshots</url>
-        </snapshotRepository>
+		<repository>
+			<id>pulsen</id>
+			<url>http://maven.gbg.pi.pulsen/libs-releases-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>pulsen</id>
+			<url>http://maven.gbg.pi.pulsen/libs-snapshots-local</url>
+		</snapshotRepository>        
     </distributionManagement>
 
     <dependencies>
